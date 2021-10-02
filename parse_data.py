@@ -75,7 +75,9 @@ for dataset in n:
                         count_l_obj+":" + attr_label + " {"
                     for dict_attr, dict_value in dict_element.items():
                         new_node_list_obj += dict_attr+":'"+dict_value+"', "
-                    new_node_list_obj = new_node_list_obj[:-2]+"})"
+                    new_node_list_obj = new_node_list_obj[:-2] + \
+                        "}) MERGE (n"+count_l_obj + \
+                        ")<-[:HAS_"+attr_label.upper() + "]-(a)"
                     count_l_obj = str(int(count_l_obj) + 1)
 
                 # print(new_node)
@@ -95,7 +97,7 @@ for dataset in n:
 
     # print(dataset_node)
     # print(new_node_object)
-    print(new_node_object)
+    print(new_node_list_obj)
 
     print()
 
