@@ -29,10 +29,13 @@ for dataset in n:
     dataset_node = "MERGE (:Dataset {"
     for attr, value in dataset.items():
         if attr[0] == '@':
-            attr.replace('@', 'at_')
+            # print(attr)
+            attr = 'at_'+attr[1:]
+            # attr.replace('@', 'at_')
         if type(value) == str:
             dataset_node += attr+":'"+value+"',"
-        # print(attr, value)
+    dataset_node = dataset_node[:-1]+"})"
+    # print(attr, value)
     # dataset_node += "})"
 
     print(dataset_node)
