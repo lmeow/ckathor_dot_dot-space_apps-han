@@ -34,7 +34,6 @@ def get_relationship(name):
 m = io.open('./datasets.json', 'r', encoding='utf-8').read()
 # Dump all data from BFS file as string, then loads as json object
 n = json.loads(m)
-# print(n)
 for dataset in n:
     dataset_node = "MERGE (a:Dataset {"
 
@@ -60,51 +59,41 @@ for dataset in n:
             if type(value[0]) == str:
                 # new_node_list_str = ""
                 for str_element in value:
-                    # print(str_element)
                     new_node_list_str += " MERGE (n"+count_l_str+":" + attr_label + \
                         " {title:'"+str_element+"'}) MERGE (n"+count_l_str + \
                         ")<-[:HAS_"+attr_label.upper() + "]-(a)"
                     count_l_str = str(int(count_l_str) + 1)
-                # print(new_node)
 
             # if the elements in list are objects, then create new nodes for
             # each of the elements with the key-value pairs as properties and the property name as Label
             if type(value[0]) == dict:
                 # new_node_list_obj = ""
                 for dict_element in value:
-                    new_node_list_obj += " MERGE (n" + \
+                    new_node_list_obj += " MERGE (m" + \
                         count_l_obj+":" + attr_label + " {"
                     for dict_attr, dict_value in dict_element.items():
+                        dict_attr = check_if_at(dict_attr)
                         new_node_list_obj += dict_attr+":'"+dict_value+"', "
                     new_node_list_obj = new_node_list_obj[:-2] + \
-                        "}) MERGE (n"+count_l_obj + \
+                        "}) MERGE (m"+count_l_obj + \
                         ")<-[:HAS_"+attr_label.upper() + "]-(a)"
                     count_l_obj = str(int(count_l_obj) + 1)
-
-                # print(new_node)
 
         if type(value) == dict:
             # new_node_object = ""
 
-            new_node_object += " MERGE (n"+count_obj+":" + attr_label + " {"
+            new_node_object += " MERGE (o"+count_obj+":" + attr_label + " {"
             for dict_attr, dict_value in value.items():
                 dict_attr = check_if_at(dict_attr)
                 new_node_object += dict_attr+":'"+dict_value+"', "
             new_node_object = new_node_object[:-2] + \
-                "}) MERGE (n"+count_obj + \
+                "}) MERGE (o"+count_obj + \
                 ")<-[:HAS_"+attr_label.upper() + "]-(a)"
-            # print(new_node_object)
+
             count_obj = str(int(count_obj) + 1)
 
-    # print(dataset_node)
-    # print(new_node_object)
-    print(new_node_list_str)
+    dataset_node = dataset_node[:-1]+"})"
+    print(dataset_node + new_node_list_str +
+          new_node_list_obj + new_node_list_str + new_node_object)
 
     print()
-
-    dataset_node = dataset_node[: -1]+"})"
-
-    # print(attr, value)
-    # dataset_node += "})"
-
-    # print(dataset_node)
