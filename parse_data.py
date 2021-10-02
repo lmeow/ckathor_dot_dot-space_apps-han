@@ -21,15 +21,18 @@ import pickle
 # Open file with BFS (that is not modified with guids)
 m = io.open('./datasets.json', 'r', encoding='utf-8').read()
 # Dump all data from BFS file as string, then loads as json object
-n = json.loads(json.loads(json.dumps(m)))
+n = json.loads(m)
+print(n)
 for dataset in n:
     # print(type(dataset))
 
-    dataset_node = "MEGRE (:Dataset {"
+    dataset_node = "MERGE (:Dataset {"
     for attr, value in dataset.items():
+        if attr[0] == '@':
+            attr.replace('@', 'at_')
         if type(value) == str:
-            dataset_node += attr+":"+value+","
+            dataset_node += attr+":'"+value+"',"
         # print(attr, value)
-    dataset_node += "})"
+    # dataset_node += "})"
 
     print(dataset_node)
