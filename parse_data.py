@@ -62,7 +62,8 @@ for dataset in n:
                 for str_element in value:
                     # print(str_element)
                     new_node_list_str += " MERGE (n"+count_l_str+":" + attr_label + \
-                        " {title:'"+str_element+"'})"
+                        " {title:'"+str_element+"'}) MERGE (n"+count_l_str + \
+                        ")<-[:HAS_"+attr_label.upper() + "]-(a)"
                     count_l_str = str(int(count_l_str) + 1)
                 # print(new_node)
 
@@ -97,7 +98,7 @@ for dataset in n:
 
     # print(dataset_node)
     # print(new_node_object)
-    print(new_node_list_obj)
+    print(new_node_list_str)
 
     print()
 
