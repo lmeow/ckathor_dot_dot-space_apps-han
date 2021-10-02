@@ -27,7 +27,7 @@ for dataset in n:
 
     dataset_node = "MEGRE (:Dataset {"
     for attr, value in dataset.items():
-        if type(value) == String:
+        if type(value) == str:
             dataset_node += attr+":"+value+","
         # print(attr, value)
     dataset_node += "})"
