@@ -5,7 +5,7 @@ import os
 import json
 import uuid
 import pickle
-
+# kul med git!
 p_file = 'words_pickle.p'
 
 r = requests.get('https://jsonplaceholder.typicode.com/todos/1')
