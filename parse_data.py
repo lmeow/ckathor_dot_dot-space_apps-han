@@ -10,7 +10,7 @@ import pickle
 
 r = requests.get('https://data.nasa.gov/data.json')
 
-r_datasets = r.json()['dataset'][:100]
+r_datasets = r.json()['dataset']
 
 o = io.open('./datasets.json', 'a', encoding='utf-8')
 
