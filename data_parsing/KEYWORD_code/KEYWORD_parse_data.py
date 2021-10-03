@@ -28,18 +28,11 @@ def check_if_at(attr):
 def get_relationship(name):
     return name
 
-# p_file = 'words_pickle.p'
-
 
 r = requests.get('https://data.nasa.gov/data.json')
 r_datasets = r.json()['dataset'][18452:]
 o = io.open('./datasets.json', 'a', encoding='utf-8')
 
-
-# for dataset in r_datasets:
-
-
-# json.dump(r_datasets, o)
 
 # Open file with BFS (that is not modified with guids)
 # m = io.open('./datasets.json', 'r', encoding='utf-8').read()
@@ -79,7 +72,6 @@ for dataset in r_datasets:
             # if the elements in list are objects, then create new nodes for
             # each of the elements with the key-value pairs as properties and the property name as Label
             if type(value[0]) == dict:
-                # new_node_list_obj = ""
                 for dict_element in value:
                     new_node_list_obj += " MERGE (m" + \
                         count_l_obj+":" + attr_label + " {"
@@ -94,7 +86,6 @@ for dataset in r_datasets:
                     count_l_obj = str(int(count_l_obj) + 1)
 
         if type(value) == dict:
-            # new_node_object = ""
 
             new_node_object += " MERGE (o"+count_obj+":" + attr_label + " {"
             for dict_attr, dict_value in value.items():
@@ -111,8 +102,6 @@ for dataset in r_datasets:
     query = dataset_node + new_node_list_str + \
         new_node_list_obj + new_node_object+";"
 
-    # print()
-
     def run_queries(tx):
         global query
         print(query)
@@ -123,9 +112,3 @@ for dataset in r_datasets:
 
     print()
 driver.close()
-
-#     json.dump(query.strip('"'), o, ensure_ascii=False)
-# i = io.open('./datasets.json', 'r', encoding='utf-8')
-# p = io.open('./datasets1.json', 'a', encoding='utf-8')
-
-# json.dump(i.strip('"'), p, ensure_ascii=False)
