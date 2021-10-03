@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      margin: 100;
+      background-color: black;
+    }
+  </style>
+
+  <script src="//unpkg.com/3d-force-graph"></script>
+  <!--  <script src="../../dist/3d-force-graph.js"></script>-->
+
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three-spritetext"></script>
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+    const elem = document.getElementById('3d-graph');
+
+    const Graph = ForceGraph3D()(elem)
+      .jsonUrl('neo4jdata.json')
+      .nodeLabel('title')
+      .nodeAutoColorBy('group')
+      .linkDirectionalArrowLength(1)
+      .linkDirectionalArrowRelPos(1);
+  </script>
+</body>
+
+</html>
