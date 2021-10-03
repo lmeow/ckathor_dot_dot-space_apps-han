@@ -32,7 +32,7 @@ def get_relationship(name):
 
 
 r = requests.get('https://data.nasa.gov/data.json')
-r_datasets = r.json()['dataset']
+r_datasets = r.json()['dataset'][18452:]
 o = io.open('./datasets.json', 'a', encoding='utf-8')
 
 
@@ -72,7 +72,7 @@ for dataset in r_datasets:
                 # new_node_list_str = ""
                 for str_element in value:
                     new_node_list_str += " MERGE (n"+count_l_str+":" + attr_label + \
-                        " {title:'"+str_element+"'}) MERGE (n"+count_l_str + \
+                        " {title:'"+str_element.replace('\"', '\\"').replace("'", "\\'")+"'}) MERGE (n"+count_l_str + \
                         ")<-[:HAS_"+attr_label.upper() + "]-(a)"
                     count_l_str = str(int(count_l_str) + 1)
 
