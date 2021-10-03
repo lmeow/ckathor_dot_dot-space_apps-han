@@ -24,13 +24,13 @@ r_tax = r.json()['taxonomy']['children']
 
 def rec_search(child_c):
     if child_c['hasChildren']:
-        print('true')
+        print('true', child_c['code'])
         r = requests.get(
             'https://techport.nasa.gov/api/taxonomies/nodes/'+str(child_c['taxonomyNodeId']))
         for child in r.json()['children']:
             rec_search(child['content'])
     else:
-        print('false')
+        print('false', child_c['code'])
 
 
 for a_child in r_tax:
