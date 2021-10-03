@@ -549,10 +549,10 @@
     appropriate. Ability to
     NASA Competency Management SystemPage 21
     lead, coordinate, manage and direct the development and
-    implementation of NASA’s and Federal emergency management
+    implementation of NASAï¿½s and Federal emergency management
     policies, plans, and procedures for emergency response
     conditions, contingencies, continuity of operations,
-    occupant emergency plans, and NASA’s interagency support
+    occupant emergency plans, and NASAï¿½s interagency support
     functions in a full spectrum of emergencies. This
     competency includes the commitment to produce sound policy
     through requirements development that may affect lives,
@@ -1001,7 +1001,7 @@
     structural systems experiencing launch, on-orbit, re-entry
     or landing environments and the associated response
     measurement methods to verify or correlate the structural
-    system’s analytical models. Test discipline skills
+    systemï¿½s analytical models. Test discipline skills
     associated with this competency include: vibration;
     acoustics; shock; static structural loads; and modal
     analysis.
@@ -1040,7 +1040,7 @@
   <skos:broader rdf:resource='urn:comp:130'/>
   <skos:scopeNote>Professional skills and knowledge to apply occupational
     health related requirements to protect and maintain
-    workers’ physical and mental health. Knowledge to apply and
+    workersï¿½ physical and mental health. Knowledge to apply and
     initiate preventive health and wellness measures to reduce
     work-related illnesses and injuries. Knowledge and
     experience to manage implement and evaluate occupational
@@ -2277,7 +2277,7 @@
   <skos:altLabel>GNCNAVSYS</skos:altLabel>
   <skos:broader rdf:resource='urn:comp:22'/>
   <skos:scopeNote>Knowledge of and ability to employ navigation hardware
-    including Inertial Measurement Unit’s (IMU: gyro and
+    including Inertial Measurement Unitï¿½s (IMU: gyro and
     accelerometers), Global Position Satellite receivers, star
     trackers, sun sensors, etc. Knowledge of and skill in using
     Kalman filtering and other software techniques to merge
@@ -2748,13 +2748,13 @@
   <skos:altLabel>LEADWORK</skos:altLabel>
   <skos:broader rdf:resource='urn:comp:140'/>
   <skos:scopeNote>Knowledge, capabilities and practices associated with
-    determining an organization’s business direction and
+    determining an organizationï¿½s business direction and
     vision, and setting goals that align with broader Agency
     objectives and related functional or program plans.
     Knowledge of how to apply policies and regulations that
-    impact NASA including NASA Strategic Plan, President’s
+    impact NASA including NASA Strategic Plan, Presidentï¿½s
     Management Agenda, Space Act, and GPRA. Ability to assess
-    impact of work performance on NASA’s relationship with
+    impact of work performance on NASAï¿½s relationship with
     external customers and stakeholders. Ability to develop
     systems that facilitate the effective assignment of work
     and measurement of results. Knowledge of methods for
@@ -2793,7 +2793,7 @@
     and engage others in implementing the change process.
     Ability to apply human capital and leadership strategies to
     empower teams and develop leadership capabilities in lower
-    level managers. Ability to determine an organization’s
+    level managers. Ability to determine an organizationï¿½s
     business direction and vision, and set goals that align
     with broader Agency objectives and related functional or
     program plans. Knowledge of methods for integrating work
@@ -2802,9 +2802,9 @@
     division, business and geographic implications when
     approaching problems or issues. Knowledge of how to apply
     policies and regulations that impact NASA including NASA
-    Strategic Plan, Mission Directorate Roadmaps, President’s
+    Strategic Plan, Mission Directorate Roadmaps, Presidentï¿½s
     Management Agenda, Space Act, and GPRA. Ability to assess
-    impact of work performance on NASA’s relationships with
+    impact of work performance on NASAï¿½s relationships with
     external customers and stakeholders.
   </skos:scopeNote>
   <nt2:status>Approved</nt2:status>
@@ -2959,7 +2959,7 @@
     than discharge of a propellant to gain motive force (i.e.,
     non-rocket propulsion). Specialty knowledge in one or more
     categories of propellantless propulsion devices including
-    solar sails, momentum exchange – electrodynamic reboost
+    solar sails, momentum exchange ï¿½ electrodynamic reboost
     tethers, aerocapture, etc.
   </skos:scopeNote>
   <nt2:status>Approved</nt2:status>
@@ -3301,7 +3301,7 @@
   <skos:altLabel>GNCCTLELE</skos:altLabel>
   <skos:broader rdf:resource='urn:comp:22'/>
   <skos:scopeNote>Knowledge of and ability to employ navigation hardware
-    including Inertial Measurement Unit’s (IMU: gyro and
+    including Inertial Measurement Unitï¿½s (IMU: gyro and
     accelerometers), Global Position Satellite receivers, star
     trackers, sun sensors, etc. Knowledge of and skill in using
     Kalman filtering and other software techniques to merge
@@ -4447,7 +4447,7 @@
     visualize, plan and execute limited instructions from
     engineering, in the form of drawings/schematics, written or
     verbal direction, in order to produce a model, prototype or
-    finished product. The technician’s application of tools and
+    finished product. The technicianï¿½s application of tools and
     apparatus, both physical and analytical, are a key element
     of this competency.
   </skos:scopeNote>
@@ -4799,7 +4799,7 @@
     formulating, planning, implementing, managing, tracking and
     evaluating equal employment opportunity initiatives and
     programs. Includes the ability to fully integrate EO into
-    all aspects of NASA’s mission as core values, to ensure a
+    all aspects of NASAï¿½s mission as core values, to ensure a
     balanced and consistent implementation of statutory and
     administrative mandates such as maintaining an efficient
     and timely complaints processing program, an effective
@@ -6514,7 +6514,7 @@
   <skos:broader rdf:resource='urn:comp:1189'/>
   <skos:scopeNote>Knowledge, capabilities and practices associated with the
     application of diversity management including developing,
-    implementing, evaluating, and monitoring the Agency’s
+    implementing, evaluating, and monitoring the Agencyï¿½s
     Diversity Strategic Implementation Plan and related
     programs as well as internal diversity communications and
     external diversity relations, diverse employee network
@@ -6523,7 +6523,7 @@
     Center(s) leadership and Diversity Council(s) to optimize
     and support efforts to acquire and sustain a vital
     effective workforce, to capitalize on the strengths of a
-    diverse workforce to better perform the Center’s mission
+    diverse workforce to better perform the Centerï¿½s mission
     through teamwork and innovation, and to build an
     organizational climate in which employees respect,
     appreciate, and value individual differences as catalysts
