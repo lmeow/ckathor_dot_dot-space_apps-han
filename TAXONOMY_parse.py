@@ -22,15 +22,48 @@ r_tax = r.json()['taxonomy']['children']
 # print(r_tax)
 
 
+def send_to_db(query):
+
+    def run_queries(tx):
+        print(query)
+        tx.run(query)
+
+    with driver.session() as session:
+        session.write_transaction(run_queries)
+
+
 def rec_search(child_c):
     if child_c['hasChildren']:
-        print('true', child_c['code'])
+        # print('true', child_c['code'])
+        child_c_node = "(:TechPort:Taxonomy {"
+        for dict_attr, dict_value in child_c.items():
+            t = type(dict_value)
+            if t == str or t == int:
+                dict_value = str(dict_value)
+                dict_attr = dict_attr.replace('-', '_')
+                child_c_node += dict_attr+":'" + \
+                    dict_value.replace('\"', '\\"').replace(
+                        "'", "\\'")+"', "
+        query = "MERGE " + child_c_node[:-2]+"})"
+        send_to_db(query)
+
         r = requests.get(
             'https://techport.nasa.gov/api/taxonomies/nodes/'+str(child_c['taxonomyNodeId']))
         for child in r.json()['children']:
             rec_search(child['content'])
     else:
-        print('false', child_c['code'])
+        # print('false', child_c['code'])
+        child_c_node = "(:TechPort:Taxonomy {"
+        for dict_attr, dict_value in child_c.items():
+            t = type(dict_value)
+            if t == str or t == int:
+                dict_value = str(dict_value)
+                dict_attr = dict_attr.replace('-', '_')
+                child_c_node += dict_attr+":'" + \
+                    dict_value.replace('\"', '\\"').replace(
+                        "'", "\\'")+"', "
+        query = "MERGE " + child_c_node[:-2]+"})"
+        send_to_db(query)
 
 
 for a_child in r_tax:
