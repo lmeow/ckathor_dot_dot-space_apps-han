@@ -2,7 +2,12 @@ from bs4 import BeautifulSoup
 from lxml import etree
 
 BS_data = []
-with open("competencies.xml", "r") as f:
+with open("./SKOS/competencies.xml", "r", encoding='ISO-8859-1') as f:
+    aString = f.read()
+    parser = etree.XMLParser(recover=True)
+    tree = etree.fromstring(aString, parser)
+    print(tree.xpath('//Concept'))
+    # print(aString)
     xmlfile = etree.parse(f)
     # XMLdata = f.read()
     # XMLdata = f.readlines()
@@ -36,51 +41,17 @@ for element in xmlfile.iter():
         preflabel_exist = False
         altlabel_exist = False
 
-for tuples in datalist:
-    print(tuples)
+
+# for tuples in datalist:
+    # print(tuples)
+
+# print(f.read().xpath('//Concept'))
 
 
-# print(dir(xmlfile))
-# testml = xmlfile.getpath(xmlfile.findall(prefLabel_URI))
-# mydict = {}
-# print(testml)
-# for e in xmlfile.findall(Concept_URI):
-#     if e.tag == Concept_URI:
-#             print(e.text)
-#     if e.tag == prefLabel_URI:
-#         print(e.text)
-    # for e in element:
-        # print(e.tag)
-        # if e.tag == Concept_URI:
-        #     print(e.text)
-        # if e.tag == prefLabel_URI:
-        #     print(e.text)
-
-# for element in xmlfile.iter():
-    # if element.tag == Concept_URI:
-        # print(element.text)
-
-
-# xmlfile2 = etree.getroot(xmlfile)
-# test = xmlfile.find("prefLabel")
-# print(test)
-
-# root = etree.XML(XMLdata)
-# print(root.tag)
-
-# data = etree.Element()
-
-# BS_data = []
-# with open("competencies.xml", "r") as f:
-#     XMLdata = f.readlines()
-#     XMLdata = "".join(XMLdata)
-    
-# BS_data = BeautifulSoup(XMLdata, "xml")
-# print(XMLdata)
-
-
-# print(BS_data)
-
-# b_test = BS_data.find_all("skos:prefLabel")
-
-# print(b_test)
+# data = open('./SKOS/competencies.xml', 'rb')
+xslt_root = etree.parse('./SKOS/competencies.xml')
+print(xslt_root)
+# aString = f.read()
+# parser = etree.XMLParser(recover=True)
+# tree = etree.fromstring(aString, parser)
+# print(tree.xpath('//Concept'))
